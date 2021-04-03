@@ -18,7 +18,7 @@ class Carro:
             print(f'O {self.marca} {self.modelo} acabou de ligar')
             self.ligado = True
             self.desligado = False
-        elif self.ligado:
+        else:
             print(f'O {self.marca} {self.modelo} já está ligado')
 
     def desligar(self):
@@ -28,7 +28,7 @@ class Carro:
             self.ligado = False
         elif self.ligado and self.velocidade >= 1:
             print(f'O {self.marca} {self.modelo} não pode desligar porque esta andando. Pare-o Primeiro.')
-        elif self.desligado:
+        else:
             print(f'O {self.marca} {self.modelo} já está desligado')
 
     def acelerar(self, velocidade):
@@ -57,11 +57,11 @@ class Carro:
             elif self.direcao in 'Ss':
                 print(f'Você estava na direção Sul, agora estará na direção Oeste.')
                 self.direcao = 'O'
-            elif self.direcao in 'Oo':
+            else:
                 print(f'Você estava na direção Oeste, agora estará na direção Norte.')
                 self.direcao = 'N'
-            else:
-                print(f'Você digitou uma direção inválida.')
+        else:
+            print(f'O carro não pode virar porque está parado.')
 
     def virar_esquerda(self):
         if self.ligado and self.velocidade >= 1:
@@ -74,11 +74,11 @@ class Carro:
             elif self.direcao in 'Ss':
                 print(f'Você estava na direção Sul, agora estará na direção Leste.')
                 self.direcao = 'L'
-            elif self.direcao in 'Ll':
+            else:
                 print(f'Você estava na direção Leste, agora estará na direção Norte.')
                 self.direcao = 'N'
-            else:
-                print(f'Você digitou uma direção inválida.')
+        else:
+            print(f'O carro não pode virar porque está parado.')
 
     def parar(self):
         if self.velocidade <= 0:
@@ -97,6 +97,12 @@ c1.frear()
 c1.frear()
 c1.acelerar(20)
 c1.virar_direita()
+c1.virar_direita()
+c1.virar_direita()
+c1.virar_direita()
+c1.virar_esquerda()
+c1.virar_esquerda()
+c1.virar_esquerda()
 c1.virar_esquerda()
 c1.desligar()
 c1.parar()
